@@ -6,7 +6,8 @@ const Offer = () => {
     <>
       <br></br>
       <br></br>
-      <Link to="/">Voir les articles</Link>
+      <h1>Vous etes sur la page offer</h1>
+      <Link to="/">Revenir à l'accueil</Link>
     </>
   );
 };
