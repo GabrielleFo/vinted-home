@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Home = () => {
-  const [data, setData] = useState([{}]);
+  const [data, setData] = useState({});
   const [isLoading, setIsloading] = useState(true);
 
   const fetchData = async () => {
@@ -26,10 +26,21 @@ const Home = () => {
       ) : (
         <>
           <h1>Vous etes sur la page home</h1>
-          <h2>{data.offers}</h2>
+
+          {data.offers.map((elem, id) => {
+            return (
+              <>
+                <h2>
+                  {elem.product_name} {elem.product_price}
+                </h2>
+                <img src={elem.product_image.url} alt={elem.product_name}></img>
+                <p> {elem.product_description}</p>
+                <Link to="/offer">Détail article</Link>
+              </>
+            );
+          })}
         </>
       )}
-      <Link to="/product">Revenir à la page article</Link>
     </div>
   );
 };
