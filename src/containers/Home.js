@@ -30,12 +30,15 @@ const Home = () => {
           {data.offers.map((elem, id) => {
             return (
               <>
-                <h2>
-                  {elem.product_name} {elem.product_price}
-                </h2>
-                <img src={elem.product_image.url} alt={elem.product_name}></img>
-                <p> {elem.product_description}</p>
-                <Link to="/offer">Détail article</Link>
+                <Link to={`/offer/${elem._id}`}>
+                  <p>vendeur:{elem.owner.account.username}</p>
+                  <img
+                    src={elem.product_image.url}
+                    alt={elem.product_name}
+                  ></img>
+                  <h2> {elem.product_price}</h2>
+                  <p>{elem.product_name}</p>
+                </Link>
               </>
             );
           })}
