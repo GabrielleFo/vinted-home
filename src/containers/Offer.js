@@ -7,14 +7,17 @@ const Offer = () => {
   const { id } = useParams();
 
   const [data, setData] = useState({});
+
   const [isLoading, setIsloading] = useState(true);
   useEffect(() => {
+    console.log(id);
     const fetchData = async () => {
       const response = await axios.get(
-        `https://lereacteur-vinted-api.herokuapp.com/offers/${id}`
+        `https://lereacteur-vinted-api.herokuapp.com/offer/${id}`
       );
       console.log(response.data);
       setData(response.data);
+
       setIsloading(false);
     };
 
@@ -27,15 +30,28 @@ const Offer = () => {
         <p>En cours de chargement ...</p>
       ) : (
         <>
-          <h1>Vous etes sur la page offer</h1>
-          {data.product_details.map((elem, index) => {
-            const keys = Object.keys(elem);
-            return (
-              <p key={index}>
-                {keys[0]} {elem[keys[0]]}
-              </p>
-            );
-          })}
+          <div className="offer-container">
+            <div className="offer-infos">
+              <p>{data.product_price}</p>
+              {data.product_details.map((elem, index) => {
+                console.log("elem=>", elem);
+                const keys = Object.keys(elem);
+                return (
+                  <p key={index}>
+                    {keys[0]} {elem[keys[0]]}
+                  </p>
+                );
+              })}
+              <p>{data.product_name}</p>
+              <p>{data.product_description}</p>
+              <img
+                src={data.owner.account.avatar.url}
+                alt={data.owner.account.username}
+              ></img>
+              <span>{data.owner.account.username}</span>
+            </div>
+            <img src={data.product_image.url} alt={data.product_name}></img>
+          </div>
 
           <Link to="/">Revenir à l'accueil</Link>
         </>

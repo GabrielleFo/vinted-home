@@ -10,14 +10,22 @@ import Header from "./components/Header";
 //import des containers
 import Home from "./containers/Home";
 import Offer from "./containers/Offer";
+import Signup from "./containers/Signup";
+import Login from "./containers/Login";
 
 function App() {
   return (
     <Router>
       <Header />
       <Switch>
-        <Route path="/offer">
+        <Route path="/offer/:id">
           <Offer />
+        </Route>
+        <Route path="/signup">
+          <Signup />
+        </Route>
+        <Route path="/login">
+          <Login />
         </Route>
         <Route path="/">
           <Home />

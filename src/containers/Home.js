@@ -20,24 +20,33 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="card-wrapper">
       {isLoading === true ? (
         <p>En cours de chargement ...</p>
       ) : (
         <>
-          <h1>Vous etes sur la page home</h1>
-
           {data.offers.map((elem, id) => {
             return (
               <>
                 <Link to={`/offer/${elem._id}`}>
-                  <p>vendeur:{elem.owner.account.username}</p>
-                  <img
-                    src={elem.product_image.url}
-                    alt={elem.product_name}
-                  ></img>
-                  <h2> {elem.product_price}</h2>
-                  <p>{elem.product_name}</p>
+                  <div className="card-container">
+                    <div className="card-avatar">
+                      <img
+                        src={elem.owner.account.avatar.url}
+                        alt={elem.owner.account.username}
+                      ></img>
+                      <span>{elem.owner.account.username}</span>
+                    </div>
+
+                    <div className="card-offer">
+                      <img
+                        src={elem.product_image.url}
+                        alt={elem.product_name}
+                      ></img>
+                      <h2> {elem.product_price}€</h2>
+                      <p>{elem.product_name}</p>
+                    </div>
+                  </div>
                 </Link>
               </>
             );
