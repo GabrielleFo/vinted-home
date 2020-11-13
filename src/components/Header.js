@@ -1,21 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ token, setUser }) => {
   return (
     <>
       <div className="header">
         <h1>Vinted</h1>
-        <div>
-          <input type="text" placeholder=" 🔎 Recherche article"></input>
-          <button>
-            <Link to="/signup">S'inscrire</Link>
+        {token ? (
+          <button
+            className="button-header"
+            onClick={() => {
+              setUser(null);
+            }}
+          >
+            Se déconnecter
           </button>
-          <button>
-            <Link to="/login">Se Connecter</Link>
-          </button>
-          <button>Vends tes articles</button>
-        </div>
+        ) : (
+          <div>
+            <input type="text" placeholder=" 🔎 Recherche article"></input>
+            <button>
+              <Link to="/signup">S'inscrire</Link>
+            </button>
+            <button>
+              <Link to="/login">Se Connecter</Link>
+            </button>
+            <button>Vends tes articles</button>
+          </div>
+        )}
       </div>
     </>
   );

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ setUser }) => {
+  const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -17,6 +19,12 @@ const Login = () => {
         }
       );
       console.log(response.data);
+      if (response.data.token) {
+        setUser(response.data.token);
+        history.push("/");
+      } else {
+        alert("Une erreur est survenue");
+      }
     } catch (error) {
       console.log(error.message);
     }

@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
-const Signup = () => {
+const Signup = ({ setUser }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const history = useHistory();
 
   const handleSubmit = async (event) => {
     //empecher le rafraichissement
@@ -15,6 +18,13 @@ const Signup = () => {
         { username: username, email: email, password: password }
       );
       console.log(response.data);
+      if (response.data.token) {
+        setUser(response.data.token);
+        //revenir vers la page d'accueil
+        history.push("/");
+      } else {
+        alert("Une erreur est survenue");
+      }
     } catch (error) {
       console.log(error.message);
     }
