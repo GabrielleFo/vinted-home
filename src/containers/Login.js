@@ -31,31 +31,35 @@ const Login = ({ setUser }) => {
   };
   return (
     <>
-      <div>Se connecter</div>
-      <br></br>
-      {/*Formulaire avec une requête vers la route login de notre API */}
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Votre email"
-          value={email}
-          onChange={(event) => {
-            setEmail(event.target.value);
-          }}
-        ></input>
-        <br></br>
-        <input
-          type="password"
-          placeholder="Votre mot de passe"
-          value={password}
-          onChange={(event) => {
-            setPassword(event.target.value);
-          }}
-        ></input>
-        <br></br>
-        <br></br>
-        <button type="submit">Se connecter</button>
-      </form>
+      <div className="container-form">
+        <div className="form">
+          <p>Se connecter</p>
+          <br></br>
+          {/*Formulaire avec une requête vers la route login de notre API */}
+          <form onSubmit={handleSubmit}>
+            <input
+              type="email"
+              placeholder="Votre email"
+              value={email}
+              onChange={(event) => {
+                setEmail(event.target.value);
+              }}
+            ></input>
+            <br></br>
+            <input
+              type="password"
+              placeholder="Votre mot de passe"
+              value={password}
+              onChange={(event) => {
+                setPassword(event.target.value);
+              }}
+            ></input>
+            <br></br>
+            <br></br>
+            <button type="submit">Se connecter</button>
+          </form>
+        </div>
+      </div>
     </>
   );
 };

@@ -16,7 +16,7 @@ const Header = ({ token, setUser }) => {
             Se déconnecter
           </button>
         ) : (
-          <div>
+          <div className="header-button">
             <input type="text" placeholder=" 🔎 Recherche article"></input>
             <button>
               <Link to="/signup">S'inscrire</Link>

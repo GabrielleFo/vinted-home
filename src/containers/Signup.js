@@ -31,40 +31,41 @@ const Signup = ({ setUser }) => {
   };
   return (
     <>
-      <div>
-        S'inscrire
-        <br></br>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Nom d'utilisateur"
-            value={username}
-            onChange={(event) => {
-              setUsername(event.target.value);
-            }}
-          ></input>
-          <br></br>
-          <input
-            type="email"
-            placeholder="Votre email"
-            value={email}
-            onChange={(event) => {
-              setEmail(event.target.value);
-            }}
-          ></input>
-          <br></br>
-          <input
-            type="password"
-            placeholder="Votre mot de passe"
-            value={password}
-            onChange={(event) => {
-              setPassword(event.target.value);
-            }}
-          ></input>
-          <br></br>
-          <br></br>
-          <input type="submit" value="S'inscrire" />
-        </form>
+      <div className="container-form">
+        <div className="form">
+          <p>S'inscrire</p>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Nom d'utilisateur"
+              value={username}
+              onChange={(event) => {
+                setUsername(event.target.value);
+              }}
+            ></input>
+            <br></br>
+            <input
+              type="email"
+              placeholder="Votre email"
+              value={email}
+              onChange={(event) => {
+                setEmail(event.target.value);
+              }}
+            ></input>
+            <br></br>
+            <input
+              type="password"
+              placeholder="Votre mot de passe"
+              value={password}
+              onChange={(event) => {
+                setPassword(event.target.value);
+              }}
+            ></input>
+            <br></br>
+            <br></br>
+            <button type="submit">S'inscrire</button>
+          </form>
+        </div>
       </div>
     </>
   );

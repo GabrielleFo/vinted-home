@@ -44,7 +44,9 @@ const Home = () => {
                         alt={elem.product_name}
                       ></img>
                       <h2> {elem.product_price}€</h2>
-                      <p>{elem.product_name}</p>
+                      <span>{elem.product_details[1].TAILLE}</span>
+                      <br></br>
+                      <span>{elem.product_details[0].MARQUE}</span>
                     </div>
                   </div>
                 </Link>

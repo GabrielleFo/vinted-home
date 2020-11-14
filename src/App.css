@@ -7,26 +7,55 @@ h1 {
   font-size: 50px;
   color: #00bfff;
 }
+
 .button-header {
   height: 50px;
   margin: 50px;
 }
 button {
-  margin-top: 50px;
+  margin: 50px 10px 0 0;
+  outline: none;
+  cursor: pointer;
 }
+input {
+  margin-right: 20px;
+  width: 250px;
+  outline: none;
+}
+
 /*HEADER*/
 
 .header {
   display: flex;
 }
 .header div {
-  margin-left: 100px;
+  margin-left: 50px;
 }
+.header button {
+  border: 1px solid rgb(44, 177, 186);
+  color: rgb(44, 177, 186);
+  background-color: white;
+}
+
+.header-button input {
+  border: 1px solid rgb(44, 177, 186);
+  color: lightgray;
+}
+.header a {
+  color: rgb(44, 177, 186);
+}
+
 /*******************************************/
 
 .card-offer {
   width: 235px;
-  margin: 0px 50px 0px 50px;
+  margin-bottom: 30px;
+}
+.card-offer span {
+  color: grey;
+}
+.card-offer img {
+  width: 230px;
 }
 
 /*AVATAR*/
@@ -56,6 +85,24 @@ button {
   border: 1px grey solid;
   padding: 15px;
 }
-.card-avatar {
-  margin: 0px 50px 0px 50px;
+/*FORM*/
+.container-form {
+  display: flex;
+  justify-content: center;
+}
+
+form input {
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid #fcced3;
+}
+form button {
+  background-color: #2cb1ba;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  height: 45px;
+  width: 100%;
 }
