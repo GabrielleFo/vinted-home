@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Publish = () => {
+const Publish = ({ token }) => {
+  console.log(token);
+
   const [picture, setPicture] = useState();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -25,7 +27,15 @@ const Publish = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = axios.post("http://localhost:3100/publish");
+    const response = axios.post(
+      "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
+      formData,
+      {
+        headers: {
+          autorization: "Bearer" + token,
+        },
+      }
+    );
     console.log(response.data);
   };
 

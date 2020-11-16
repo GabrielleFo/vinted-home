@@ -45,7 +45,7 @@ function App() {
           <Login setUser={setUser} />
         </Route>
         <Route path="/publish">
-          <Publish />
+          <Publish token={token} />
         </Route>
         <Route path="/">
           <Home />
