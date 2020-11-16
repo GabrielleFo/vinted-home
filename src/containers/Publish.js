@@ -27,16 +27,20 @@ const Publish = ({ token }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = axios.post(
-      "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
-      formData,
-      {
-        headers: {
-          autorization: "Bearer" + token,
-        },
-      }
-    );
-    console.log(response.data);
+    try {
+      const response = await axios.post(
+        "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
+        formData,
+        {
+          headers: {
+            authorization: "Bearer " + token,
+          },
+        }
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.log(error.response);
+    }
   };
 
   return (

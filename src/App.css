@@ -71,7 +71,7 @@ input {
 .offer-container {
   width: 1280px;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   padding: 30px;
 }
 .card-wrapper {
