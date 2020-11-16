@@ -31,10 +31,13 @@ const Home = () => {
                 <Link to={`/offer/${elem._id}`}>
                   <div className="card-container">
                     <div className="card-avatar">
-                      <img
-                        src={elem.owner.account.avatar.url}
-                        alt={elem.owner.account.username}
-                      ></img>
+                      {elem.owner.account.avatar && (
+                        <img
+                          src={elem.owner.account.avatar.url}
+                          alt={elem.owner.account.username}
+                        />
+                      )}
+
                       <span>{elem.owner.account.username}</span>
                     </div>
 

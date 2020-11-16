@@ -13,6 +13,7 @@ import Home from "./containers/Home";
 import Offer from "./containers/Offer";
 import Signup from "./containers/Signup";
 import Login from "./containers/Login";
+import Publish from "./containers/Publish";
 
 function App() {
   //tout ce qui concerne l'authentification se passe dans app.js
@@ -42,6 +43,9 @@ function App() {
         </Route>
         <Route path="/login">
           <Login setUser={setUser} />
+        </Route>
+        <Route path="/publish">
+          <Publish />
         </Route>
         <Route path="/">
           <Home />

@@ -44,10 +44,13 @@ const Offer = () => {
               })}
               <p>{data.product_name}</p>
               <p>{data.product_description}</p>
-              <img
-                src={data.owner.account.avatar.url}
-                alt={data.owner.account.username}
-              ></img>
+              {data.owner.account.avatar && (
+                <img
+                  src={data.owner.account.avatar.url}
+                  alt={data.owner.account.username}
+                />
+              )}
+
               <span>{data.owner.account.username}</span>
             </div>
             <img src={data.product_image.url} alt={data.product_name}></img>
