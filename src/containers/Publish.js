@@ -47,12 +47,13 @@ const Publish = ({ token }) => {
     <>
       <div className="container-form">
         <div className="form">
-          <div>Vends tes articles</div>
+          <div>Vends ton article</div>
           <br></br>
           <br></br>
           <form onSubmit={handleSubmit}>
             <input
               type="file"
+              className="picture"
               onChange={(event) => {
                 console.log(event.target.files);
                 setPicture(event.target.files[0]);
@@ -68,14 +69,15 @@ const Publish = ({ token }) => {
               }}
             />
             <br></br>
-            <input
-              type="textarea"
+            <textarea
               placeholder="description de ton article"
+              cols="30"
+              rows="10"
               value={description}
               onChange={(event) => {
                 setDescription(event.target.value);
               }}
-            />
+            ></textarea>
             <br></br>
             <input
               type="text"

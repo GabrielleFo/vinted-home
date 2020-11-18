@@ -16,10 +16,15 @@ button {
   margin: 50px 10px 0 0;
   outline: none;
   cursor: pointer;
+  height: 50px;
 }
 input {
   margin-right: 20px;
   width: 250px;
+  outline: none;
+}
+textarea {
+  margin-top: 20px;
   outline: none;
 }
 
@@ -105,4 +110,7 @@ form button {
   font-size: 16px;
   height: 45px;
   width: 100%;
+}
+.picture {
+  border-bottom: none;
 }

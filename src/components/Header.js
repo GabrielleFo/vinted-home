@@ -5,7 +5,9 @@ const Header = ({ token, setUser }) => {
   return (
     <>
       <div className="header">
-        <h1>Vinted</h1>
+        <h1>
+          <Link to="/">Vinted</Link>
+        </h1>
         {token ? (
           <button
             className="button-header"
@@ -24,11 +26,11 @@ const Header = ({ token, setUser }) => {
             <button>
               <Link to="/login">Se Connecter</Link>
             </button>
-            <button>
-              <Link to="/publish">Vends tes articles</Link>
-            </button>
           </div>
         )}
+        <button>
+          <Link to="/publish">Vends tes articles</Link>
+        </button>
       </div>
     </>
   );

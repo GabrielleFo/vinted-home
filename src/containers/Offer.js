@@ -9,6 +9,7 @@ const Offer = () => {
   const [data, setData] = useState({});
 
   const [isLoading, setIsloading] = useState(true);
+
   useEffect(() => {
     console.log(id);
     const fetchData = async () => {
@@ -52,6 +53,20 @@ const Offer = () => {
               )}
 
               <span>{data.owner.account.username}</span>
+              <br></br>
+              <button type="submit">
+                <Link
+                  to={{
+                    pathname: "/payment",
+                    state: {
+                      title: data.product_name,
+                      price: data.product_price,
+                    },
+                  }}
+                >
+                  ACHETER
+                </Link>
+              </button>
             </div>
             <img src={data.product_image.url} alt={data.product_name}></img>
           </div>

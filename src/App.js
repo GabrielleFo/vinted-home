@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import "./App.css";
 
 //import des packages
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Cookie from "js-cookie";
 
 //import composants Header
@@ -14,6 +19,7 @@ import Offer from "./containers/Offer";
 import Signup from "./containers/Signup";
 import Login from "./containers/Login";
 import Publish from "./containers/Publish";
+import Payment from "./containers/Payment";
 
 function App() {
   //tout ce qui concerne l'authentification se passe dans app.js
@@ -45,7 +51,10 @@ function App() {
           <Login setUser={setUser} />
         </Route>
         <Route path="/publish">
-          <Publish token={token} />
+          {!token ? <Redirect to="/login" /> : <Publish token={token} />}
+        </Route>
+        <Route path="/payment">
+          {token ? <Payment token={token} /> : <Redirect to="/login" />}
         </Route>
         <Route path="/">
           <Home />
