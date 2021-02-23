@@ -1,6 +1,9 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
-const Payment = ({ title, price }) => {
+const Payment = () => {
+  const location = useLocation();
+  const { title, price } = location.state;
   return (
     <>
       <div>Résumé de la commande</div>
