@@ -19,7 +19,7 @@ const Header = ({ token, setUser }) => {
           </button>
         ) : (
           <div className="header-button">
-            <input type="text" placeholder=" 🔎 Recherche article"></input>
+            {/* <input type="text" placeholder=" 🔎 Recherche article"></input> */}
             <button>
               <Link to="/signup">S'inscrire</Link>
             </button>

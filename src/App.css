@@ -7,6 +7,9 @@ a {
   color: var(--black);
   text-decoration: none;
 }
+.offer-infos a {
+  color: white;
+}
 h1 {
   font-size: 50px;
 }
@@ -50,9 +53,10 @@ input {
 }
 /* HEADER*/
 
-/* .header {
+.header {
+  max-width: 1280px;
   display: flex;
-} */
+}
 .header div {
   margin-left: 50px;
 }
@@ -94,17 +98,17 @@ input {
 }
 /*CONTAINER*/
 .offer-container {
-  width: 1280px;
+  width: 100%;
+  max-width: 1280px;
   display: flex;
   justify-content: flex-start;
   padding: 30px;
 }
 .payment {
-  width: 1280px;
+  max-width: 1280px;
   margin: 30px auto auto;
 }
 .card-wrapper,
-.header,
 .intro,
 .container-form,
 .container-forms {
@@ -138,7 +142,9 @@ input {
   border-bottom: 1px solid var(--lightGreen);
 }
 .forms button,
-.formSell button {
+.formSell button,
+.offer-infos button,
+.CheckOutForm {
   background-color: var(--lightGreen);
   border: none;
   outline: none;
@@ -150,7 +156,7 @@ input {
 }
 /**************formulaire publish***********************/
 .picture {
-  width: 100%;
+  width: 98%;
   border: 1px dotted grey;
   height: 60px;
   padding: 25px 0 0 15px;

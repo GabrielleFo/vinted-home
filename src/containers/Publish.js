@@ -90,7 +90,7 @@ const Publish = ({ token }) => {
                 <label>Marque</label>
                 <input
                   type="text"
-                  placeholder="Marque"
+                  placeholder="ex: Zara,Kiabi "
                   value={brand}
                   onChange={(event) => {
                     setBrand(event.target.value);
@@ -102,7 +102,7 @@ const Publish = ({ token }) => {
                 <label>Taille</label>
                 <input
                   type="text"
-                  placeholder="Taille"
+                  placeholder="ex: 36, 56cm, M"
                   value={size}
                   onChange={(event) => {
                     setSize(event.target.value);
@@ -126,7 +126,7 @@ const Publish = ({ token }) => {
                 <label>Etat</label>
                 <input
                   type="text"
-                  placeholder="Etat"
+                  placeholder="Neuf,occassion"
                   value={condition}
                   onChange={(event) => {
                     setCondition(event.target.value);
@@ -151,7 +151,7 @@ const Publish = ({ token }) => {
               <label>Prix</label>
               <input
                 type="text"
-                placeholder="Prix"
+                placeholder="0,00€"
                 value={price}
                 onChange={(event) => {
                   setPrice(event.target.value);
