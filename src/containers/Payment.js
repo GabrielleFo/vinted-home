@@ -5,11 +5,11 @@ const Payment = () => {
   const location = useLocation();
   const { title, price } = location.state;
   return (
-    <>
-      <div>Résumé de la commande</div>
+    <div className="payment">
+      <h3>Résumé de la commande</h3>
       <p>Nom du produit : {title}</p>
-      <p>Prix du produit : {price}</p>
-    </>
+      <p>Prix du produit : {price}€</p>
+    </div>
   );
 };
 

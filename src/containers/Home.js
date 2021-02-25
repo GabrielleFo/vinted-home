@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 //import packages
 import axios from "axios";
 
+//import components
+import Intro from "../components/Intro";
 const Home = () => {
   const [data, setData] = useState({});
   const [isLoading, setIsloading] = useState(true);
@@ -20,12 +22,13 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="card-wrapper">
+    <div className="intro">
+      <Intro />
       {isLoading === true ? (
         <p>En cours de chargement ...</p>
       ) : (
-        <>
-          {data.offers.map((elem, id) => {
+        <div className="card-wrapper">
+          {data.offers.map((elem, index) => {
             return (
               <>
                 <Link to={`/offer/${elem._id}`}>
@@ -56,7 +59,7 @@ const Home = () => {
               </>
             );
           })}
-        </>
+        </div>
       )}
     </div>
   );

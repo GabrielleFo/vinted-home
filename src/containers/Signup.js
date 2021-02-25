@@ -32,8 +32,8 @@ const Signup = ({ setUser }) => {
   return (
     <>
       <div className="container-form">
-        <div className="form">
-          <p>S'inscrire</p>
+        <div className="forms">
+          <h2>S'inscrire</h2>
           <form onSubmit={handleSubmit}>
             <input
               type="text"

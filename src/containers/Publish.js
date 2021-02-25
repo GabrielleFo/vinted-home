@@ -45,9 +45,9 @@ const Publish = ({ token }) => {
 
   return (
     <>
-      <div className="container-form">
-        <div className="form">
-          <div>Vends ton article</div>
+      <div className="container-forms">
+        <div className="formSell">
+          <h2>Vends ton article</h2>
           <br></br>
           <br></br>
           <form onSubmit={handleSubmit}>
@@ -60,78 +60,104 @@ const Publish = ({ token }) => {
               }}
             />
             <br></br>
-            <input
-              type="text"
-              placeholder="titre"
-              value={title}
-              onChange={(event) => {
-                setTitle(event.target.value);
-              }}
-            />
+            <div className="textDetail">
+              <div className="title">
+                <label>Titre</label>
+                <input
+                  type="text"
+                  placeholder="ex:chemise sézanne verte"
+                  value={title}
+                  onChange={(event) => {
+                    setTitle(event.target.value);
+                  }}
+                />
+              </div>
+              <br></br>
+              <div className="texterea">
+                <label>Description de l'article </label>
+                <textarea
+                  placeholder="ex: porté quelque fois, taille correctement"
+                  value={description}
+                  onChange={(event) => {
+                    setDescription(event.target.value);
+                  }}
+                ></textarea>
+              </div>
+            </div>
             <br></br>
-            <textarea
-              placeholder="description de ton article"
-              cols="30"
-              rows="10"
-              value={description}
-              onChange={(event) => {
-                setDescription(event.target.value);
-              }}
-            ></textarea>
-            <br></br>
-            <input
-              type="text"
-              placeholder="Marque"
-              value={brand}
-              onChange={(event) => {
-                setBrand(event.target.value);
-              }}
-            />
-            <br></br>
-            <input
-              type="text"
-              placeholder="Taille"
-              value={size}
-              onChange={(event) => {
-                setSize(event.target.value);
-              }}
-            />
-            <br></br>
-            <input
-              type="text"
-              placeholder="Couleur"
-              value={color}
-              onChange={(event) => {
-                setColor(event.target.value);
-              }}
-            />
-            <br></br>
-            <input
-              type="text"
-              placeholder="Etat"
-              value={condition}
-              onChange={(event) => {
-                setCondition(event.target.value);
-              }}
-            />
-            <br></br>
-            <input
-              type="text"
-              placeholder="Lieu"
-              value={city}
-              onChange={(event) => {
-                setCity(event.target.value);
-              }}
-            />
-            <br></br>
-            <input
-              type="text"
-              placeholder="Prix"
-              value={price}
-              onChange={(event) => {
-                setPrice(event.target.value);
-              }}
-            />
+            <div className="detail">
+              <div className="title">
+                <label>Marque</label>
+                <input
+                  type="text"
+                  placeholder="Marque"
+                  value={brand}
+                  onChange={(event) => {
+                    setBrand(event.target.value);
+                  }}
+                />
+              </div>
+              <br></br>
+              <div className="title">
+                <label>Taille</label>
+                <input
+                  type="text"
+                  placeholder="Taille"
+                  value={size}
+                  onChange={(event) => {
+                    setSize(event.target.value);
+                  }}
+                />
+              </div>
+              <br></br>
+              <div className="title">
+                <label>Couleur</label>
+                <input
+                  type="text"
+                  placeholder="Couleur"
+                  value={color}
+                  onChange={(event) => {
+                    setColor(event.target.value);
+                  }}
+                />
+              </div>
+              <br></br>
+              <div className="title">
+                <label>Etat</label>
+                <input
+                  type="text"
+                  placeholder="Etat"
+                  value={condition}
+                  onChange={(event) => {
+                    setCondition(event.target.value);
+                  }}
+                />
+              </div>
+              <br></br>
+              <div className="city">
+                <label>Lieu</label>
+                <input
+                  type="text"
+                  placeholder="Lieu"
+                  value={city}
+                  onChange={(event) => {
+                    setCity(event.target.value);
+                  }}
+                />
+              </div>
+              <br></br>
+            </div>
+            <div className="price">
+              <label>Prix</label>
+              <input
+                type="text"
+                placeholder="Prix"
+                value={price}
+                onChange={(event) => {
+                  setPrice(event.target.value);
+                }}
+              />
+            </div>
             <br></br>
             <br></br>
             <button type="submit">Ajouter</button>

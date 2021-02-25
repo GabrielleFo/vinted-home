@@ -40,6 +40,7 @@ function App() {
   return (
     <Router>
       <Header token={token} setUser={setUser} />
+
       <Switch>
         <Route path="/offer/:id">
           <Offer />

@@ -1,11 +1,14 @@
 /* Other rules */
+:root {
+  --black: #000;
+  --lightGreen: #2cb1ba;
+}
 a {
-  color: black;
+  color: var(--black);
   text-decoration: none;
 }
 h1 {
   font-size: 50px;
-  color: #00bfff;
 }
 
 .button-header {
@@ -19,38 +22,55 @@ button {
   height: 50px;
 }
 input {
+  height: 46px;
   margin-right: 20px;
   width: 250px;
   outline: none;
 }
-textarea {
-  margin-top: 20px;
-  outline: none;
+
+.image-accueil {
+  width: 100%;
+
+  /*clip part permets de faire des formes dans l'élément
+  la 1 chiffre correspond a l'axe des X sois horizontal
+  le deuxieme chiffre correspond à l'axe des y sois la vertical
+  autant de points que de formes voulues */
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 100%,
+    92% 94%,
+    87% 98%,
+    78% 96%,
+    73% 100%,
+    65% 96%,
+    47% 100%,
+    0% 100%
+  );
 }
+/* HEADER*/
 
-/*HEADER*/
-
-.header {
+/* .header {
   display: flex;
-}
+} */
 .header div {
   margin-left: 50px;
 }
 .header button {
-  border: 1px solid rgb(44, 177, 186);
-  color: rgb(44, 177, 186);
+  border: 1px solid var(--lightGreen);
+  color: var(--lightGreen);
   background-color: white;
 }
 
 .header-button input {
-  border: 1px solid rgb(44, 177, 186);
+  border: 1px solid var(--lightGreen);
   color: lightgray;
 }
 .header a {
-  color: rgb(44, 177, 186);
+  color: var(--lightGreen);
 }
 
-/*******************************************/
+/*****************************************/
 
 .card-offer {
   width: 235px;
@@ -79,11 +99,22 @@ textarea {
   justify-content: flex-start;
   padding: 30px;
 }
-.card-wrapper {
+.payment {
   width: 1280px;
+  margin: 30px auto auto;
+}
+.card-wrapper,
+.header,
+.intro,
+.container-form,
+.container-forms {
+  max-width: 1280px;
   display: flex;
   flex-wrap: wrap;
   margin: 30px auto auto;
+}
+.card-wrapper {
+  justify-content: center;
 }
 /**************************************/
 .offer-infos {
@@ -91,18 +122,24 @@ textarea {
   padding: 15px;
 }
 /*FORM*/
-.container-form {
-  display: flex;
+.container-form,
+.container-forms {
   justify-content: center;
 }
-
-form input {
+.container-forms {
+  background-color: #ebedee;
+}
+.formSell {
+  width: 50%;
+}
+.forms input {
   height: 40px;
   border: none;
-  border-bottom: 1px solid #fcced3;
+  border-bottom: 1px solid var(--lightGreen);
 }
-form button {
-  background-color: #2cb1ba;
+.forms button,
+.formSell button {
+  background-color: var(--lightGreen);
   border: none;
   outline: none;
   border-radius: 5px;
@@ -111,6 +148,49 @@ form button {
   height: 45px;
   width: 100%;
 }
+/**************formulaire publish***********************/
 .picture {
-  border-bottom: none;
+  width: 100%;
+  border: 1px dotted grey;
+  height: 60px;
+  padding: 25px 0 0 15px;
+}
+
+.textDetail,
+.detail,
+.price,
+.picture {
+  /* border: 1px solid red; */
+  margin-top: 40px;
+  background-color: white;
+}
+
+.title {
+  border-bottom: 1px solid grey;
+}
+.textDetail textarea {
+  /*permets d eviter la possibilité d agrandissement du texterea*/
+  resize: none;
+}
+.textDetail textarea,
+.textDetail input,
+.detail input,
+.price input {
+  height: 40px;
+  width: 300px;
+  /*outline permets de retirer la bordure bleu*/
+  outline: none;
+  border: none;
+  border-bottom: 1px solid grey;
+  font-family: inherit;
+  margin-right: 30px;
+}
+.texterea,
+.title,
+.city,
+.price {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
 }

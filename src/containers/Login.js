@@ -32,8 +32,8 @@ const Login = ({ setUser }) => {
   return (
     <>
       <div className="container-form">
-        <div className="form">
-          <p>Se connecter</p>
+        <div className="forms">
+          <h2>Se connecter</h2>
           <br></br>
           {/*Formulaire avec une requête vers la route login de notre API */}
           <form onSubmit={handleSubmit}>

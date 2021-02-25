@@ -33,7 +33,7 @@ const Offer = () => {
         <>
           <div className="offer-container">
             <div className="offer-infos">
-              <p>{data.product_price}</p>
+              <p>{data.product_price}€</p>
               {data.product_details.map((elem, index) => {
                 console.log("elem=>", elem);
                 const keys = Object.keys(elem);
